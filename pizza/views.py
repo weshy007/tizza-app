@@ -44,7 +44,7 @@ def protected_index(request, pid):
                 'description': pizza.description,
             },
         )
-    elif requet.method == 'DELETE':
+    elif request.method == 'DELETE':
         if 'can_delete' in request.user.user_permissions:
             pizza = Pizza.objects.get(id=pid)
             pizza.delete()
